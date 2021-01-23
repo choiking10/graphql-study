@@ -98,3 +98,53 @@ query {
 ```
 
 좋은 점은 request와 response의 전송이 매우 유사한 꼴을 뛰기 때문에 읽기 편리한것도 같다.
+
+## 설정
+
+### 설치
+
+```console
+npm install --global yarn
+yarn add @babel/cli @babel/core @babel/node @babel/preset-env graphql-yoga
+yarn add babel-preset-env babel-preset-stage-3
+```
+
+### babelrc 설정
+
+`.bablerc`
+
+```json
+{
+  "presets": ["@babel/preset-env"]
+}
+```
+
+### package.json 작성
+
+`package.json`
+
+```json
+{
+  "name": "graphql-study",
+  "version": "1.0.0",
+  "description": "Movie API with Graphql - nomadcoders",
+  "repository": "https://github.com/choiking10/graphql-study",
+  "author": "Yunho Choi <choiking10@gmail.com>",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "graphql-yoga": "^1.18.3"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1"
+  }
+}
+```

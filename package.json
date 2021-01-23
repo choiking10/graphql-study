@@ -1,0 +1,23 @@
+{
+  "name": "graphql-study",
+  "version": "1.0.0",
+  "description": "Movie API with Graphql - nomadcoders",
+  "repository": "https://github.com/choiking10/graphql-study",
+  "author": "Yunho Choi <choiking10@gmail.com>",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "graphql-yoga": "^1.18.3"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1"
+  }
+}
