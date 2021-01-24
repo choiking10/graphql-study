@@ -148,3 +148,51 @@ yarn add babel-preset-env babel-preset-stage-3
   }
 }
 ```
+
+## Query and Resolver
+
+어쨌든 CRUD 연산인데 `Query`는 Read에 해당함.
+즉 Query는 Database로부터 정보를 얻는것으로 정보를 받을 때 사용함.
+
+Create Uupdate Delete에 해당하는 것은 `Mutation`임.
+Mutation은 Database에서, 혹은 메모리에서 정보를 바꾸는 작업을 할 때 사용함.
+
+### Query
+
+schema.graphql
+
+```graphql
+type Query {
+  name: String!
+}
+```
+
+resolvers.js
+
+```js
+const resolvers = {
+  Query: {
+    name: () => "yunho",
+  },
+};
+
+export default resolvers;
+```
+
+index.js
+
+```js
+//...
+import resolvers from "./graphql/resolvers.js";
+//...
+const server = new GraphQLServer({
+  typeDefs: "./graphql/schema.graphql",
+  resolvers,
+});
+//...
+```
+
+이제 `yarn start`를 수행한후 `127.0.0.1:4000` 에 들어가보자.
+![query result](images/2021-01-24-12-14-15.png)
+
+awesome!
