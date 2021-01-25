@@ -149,6 +149,16 @@ yarn add babel-preset-env babel-preset-stage-3
 }
 ```
 
+### GraphQL 수정시에도 nodemon 작동하도록 수정하는 법
+
+project root에 `nodemon.json` 파일 생성
+
+```json
+{ "ext": "js json jsx graphql" }
+```
+
+nodemon 재시작
+
 ## Query and Resolver
 
 어쨌든 CRUD 연산인데 `Query`는 Read에 해당함.
@@ -194,5 +204,45 @@ const server = new GraphQLServer({
 
 이제 `yarn start`를 수행한후 `127.0.0.1:4000` 에 들어가보자.
 ![query result](images/2021-01-24-12-14-15.png)
+
+awesome!
+
+## Playground
+
+Playground는 graphql yoga에 딸려오는건데 postman 같은거야.
+
+다음과 같이 Object type을 생성해보자.
+
+```graphql
+type Yunho {
+  name: String!
+  age: Int!
+  gender: String!
+}
+
+type Query {
+  person: Yunho!
+}
+```
+
+```js
+const yunho = {
+  name: "Yunho",
+  age: 18,
+  gender: "female",
+};
+
+const resolvers = {
+  Query: {
+    person: () => yunho,
+  },
+};
+```
+
+그리고 다시 playground를 실행한후 docs를 확인해보면
+
+![](images/2021-01-25-22-33-59.png)
+
+편하게 api가 생성되고, 이를 확인할수도있어.
 
 awesome!
