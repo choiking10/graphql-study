@@ -246,3 +246,49 @@ const resolvers = {
 편하게 api가 생성되고, 이를 확인할수도있어.
 
 awesome!
+
+조금 더 복잡한 쿼리를 만들어보자.  
+다음과같이 쿼리의 결과로 array를 넘겨줄수도 있고, 인자로 어떤 것들을 받을 수도 있어.
+
+```graphql
+type Person {
+  name: String!
+  age: Int!
+  gender: String!
+}
+
+type Query {
+  people: [Person]!
+  person(id: Int!): Person
+}
+```
+
+이렇게 할경우 다음과 같이 여러개의 array에 대한 결과물을 받을 수 있지.
+
+![](images/2021-01-26-23-15-21.png)
+
+이제 argument를 받는 것을 해보자.
+
+```js
+const getById = (id) => {
+  const filteredPerson = people.filter((person) => id == person.id);
+  return filteredPerson[0];
+};
+
+const resolvers = {
+  Query: {
+    people: () => people,
+    person: (_, args) => {
+      return getById(args.id);
+    },
+  },
+};
+```
+
+resolver에 person에 관한 쿼리가 오면 args 에서 받아서 처리할 수 있어.
+위와같이 설정하면 말이야.
+굳잡맨
+
+![](images/2021-01-26-23-27-16.png)
+
+resolver는 View 같은것이고, Schema는 URL 같은거야.
