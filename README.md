@@ -332,3 +332,51 @@ const resolvers = {
 ![](images/2021-01-27-23-09-17.png)
 
 super simple~
+
+조금더 어려운 addMovie를 만들어볼까?
+
+일단 schema에 대해서 정의
+
+```graphql
+type Mutation {
+  deleteMovie(id: Int!): Boolean
+  addMovie(name: String!, score: Int!): Movie!
+}
+```
+
+db에 addMovie를 간단히 구현해보자
+
+```js
+export const addMovie = (name, score) => {
+  let last_id = movies
+    .map((movie) => movie.id)
+    .reduce((max, cur) => Math.max(max, cur));
+  let cur_id = last_id + 1;
+  let newMovie = {
+    id: cur_id,
+    name: name,
+    score: score,
+  };
+  movies.push(newMovie);
+  return newMovie;
+};
+```
+
+그리고 resolver를 수정해줘야겠지
+
+```js
+const resolvers = {
+  Query: {
+    movies: () => getMovies(),
+    movie: (_, { id }) => getById(id),
+  },
+  Mutation: {
+    addMovie: (_, { name, score }) => addMovie(name, score),
+    deleteMovie: (_, { id }) => deleteMovie(id),
+  },
+};
+```
+
+![](images/2021-01-27-23-26-38.png)
+
+TADA~
