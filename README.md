@@ -292,3 +292,43 @@ resolver에 person에 관한 쿼리가 오면 args 에서 받아서 처리할 �
 ![](images/2021-01-26-23-27-16.png)
 
 resolver는 View 같은것이고, Schema는 URL 같은거야.
+
+## Defining Mutations
+
+이제 수정할 수있도록 만들어보자.
+
+그전에 db 같은것들을 만들어서 붙여보도록 하자. 코드는 배울게없으니까 첨부하지 않을께.
+
+대충 아래와같은것들이되면 되겠찌.
+
+![](images/2021-01-27-22-58-30.png)
+
+![](images/2021-01-27-22-59-07.png)
+
+이렇게 만들어두고, Mutation을 만들어보자.
+
+schema.graphql
+
+```graphql
+type Mutation {
+  deleteMovie(id: Int!): Movie!
+}
+```
+
+resolvers.js
+
+```js
+const resolvers = {
+  Query: {
+    movies: () => getMovies(),
+    movie: (_, { id }) => getById(id),
+  },
+  Mutation: {
+    deleteMovie: (_, { id }) => deleteMovie(id),
+  },
+};
+```
+
+![](images/2021-01-27-23-09-17.png)
+
+super simple~
