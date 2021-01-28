@@ -2,6 +2,28 @@
 
 본 repository는 nomadcoder의 [graphql로 영화 api 만들기 강의](https://nomadcoders.co/graphql-for-beginners)를 참고하여 작성되었습니다.
 
+그런데 이 강의는 orm에대해서는 안다루네요. 열심히 찾아서 orm 연결해보고 테스트 프로젝트 하나 하는 것까지 진행해보겠습니다.
+
+## 참고
+
+서버는 nodejs  
+orm은 prisma  
+db는 postgre  
+api는 graphql  
+aws
+
+- lambda
+- api-gateway
+- rds
+- s3
+
+이렇게까지 연결해보자.
+
+좋은듯
+
+https://medium.com/labelstore/prisma%EB%A1%9C-graphql%EC%9D%84-%EC%89%BD%EA%B2%8C-%EB%8F%84%EC%9E%85%ED%95%98%EA%B8%B0-fa64dcf63382
+https://www.prisma.io/docs/guides/deployment/deploying-to-aws-lambda
+
 ## What GraphQL want to solve?
 
 크게 아래의 두가지 문제를 해결했다고 말을 한다.
