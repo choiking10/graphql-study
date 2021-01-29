@@ -7,7 +7,7 @@
 ## 참고
 
 서버는 nodejs  
-orm은 prisma  
+orm은 prisma https://www.prisma.io/
 db는 postgre  
 api는 graphql  
 aws
