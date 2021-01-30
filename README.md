@@ -402,3 +402,13 @@ const resolvers = {
 ![](images/2021-01-27-23-26-38.png)
 
 TADA~
+
+## Prisma
+
+https://www.prisma.io/docs/getting-started/quickstart-typescript
+
+프리즈마를 해보자
+
+일단 가볍게 sqlite를 설치해보자.
+
+https://www.sqlite.org/download.html
