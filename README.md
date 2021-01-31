@@ -412,3 +412,31 @@ https://www.prisma.io/docs/getting-started/quickstart-typescript
 일단 가볍게 sqlite를 설치해보자.
 
 https://www.sqlite.org/download.html
+
+참고 블로그
+
+https://velog.io/@gtah2yk/Prisma-%EA%B4%80%EB%A0%A8-%EC%A0%95%EB%B3%B4%EC%A0%95%EB%A6%AC-hlk50xk8h8
+
+## 프리즈마의 3가지 컨셉
+
+### Datamodel
+
+플리케이션의 모델을 정의하고 Prisma 클라이언트 API의 기반(선택 사항: 데이터베이스에 대해 마이그레이션을 수행하는 데 사용할 수 있음)
+
+### Prisma Server
+
+데이터베이스 맨 위에 있는 독립 실행되는 인프라구조 컴포넌트
+
+### Prisma Client
+
+Prisma 서버에 연결하여 데이터베이스에서 데이터를 읽고, 쓰고, 스트리밍할 수 있는 자동 생성된 라이브러리. 응용 프로그램에서 데이터 액세스에 사용된다.
+
+- Read a single record of the model
+- Read a list of records of the model (including filtering, sorting & pagination)
+- Write a new record of the model
+- Update an existing record of the model
+- Delete an existing record of the model
+- Check for the existence of a certain record of the model
+- Receive realtime updates when there is a write operation on any record of the model
+
+직접 써봐야겠는데?... 영화 api에 적용해보자...
