@@ -469,3 +469,11 @@ npm install
 ```console
 npx prisma init
 ```
+
+일단 윈도우에서는 잘안되는 거 같은디?...
+
+sqlite 는 된당;
+
+https://github.com/prisma/prisma/issues/5303
+
+지금 처리중인 이슈사항인것같음. 릴리즈 될때까지 기다리거나 다른 OS로 시도해봐야할듯;
