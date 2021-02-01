@@ -11,12 +11,14 @@
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
-    "graphql-yoga": "^1.18.3"
+    "graphql-yoga": "^1.18.3",
+    "@prisma/client": "2.15.0"
   },
   "scripts": {
     "start": "nodemon --exec babel-node index.js"
   },
   "devDependencies": {
+    "@prisma/cli": "^2.15.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1"
   }

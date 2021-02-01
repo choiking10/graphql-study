@@ -440,3 +440,32 @@ Prisma 서버에 연결하여 데이터베이스에서 데이터를 읽고, 쓰�
 - Receive realtime updates when there is a write operation on any record of the model
 
 직접 써봐야겠는데?... 영화 api에 적용해보자...
+
+## Package에 prisma 추가
+
+```json
+    //...
+  "dependencies": {
+    //...
+    "@prisma/client": "2.15.0"
+  },
+  "devDependencies": {
+    //...
+    "@prisma/cli": "2.15.0"
+  }
+    //...
+```
+
+console에서 prisma 설치
+
+```console
+npm install
+```
+
+그리고 you can now invoke the prisma CLI! npx를 사용해서 말이양
+
+그리고 prisma schema를 만들어주는 커맨드는 아래와같음
+
+```console
+npx prisma init
+```
